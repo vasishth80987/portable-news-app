@@ -1,4 +1,4 @@
-Run following commands to access graphql-query ui
+Run following commands to access graphql ui
 
 composer install<br>
 php artisan vendor:publish --tag=lighthouse-schema<br>
