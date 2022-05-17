@@ -17,6 +17,10 @@ type Query {
       "Filters by name. Accepts SQL LIKE wildcards `%` and `_`."
       name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10)
+
+    search_news(q:String!, sources: [ID!]): [NewsArticle]
+
+    fetch
 }
 
 "Account of a person who utilizes this application."
@@ -38,4 +42,30 @@ type User {
 
     "When the account was last updated."
     updated_at: DateTime!
+}
+
+type NewsSource {
+    "Unique primary key."
+    id: ID!
+
+    title: String!
+
+    description: String
+
+    api_url: String!
+
+    created_at: DateTime!
+
+    updated_at: DateTime!
+}
+
+type NewsArticle {
+    "Unique primary key."
+    id: ID!
+
+    title: String!
+
+    url: String!
+
+    published_at: DateTime!
 }

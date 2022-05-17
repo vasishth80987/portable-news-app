@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('news-source', App\Http\Controllers\NewsSourceController::class);
+
+Route::resource('pinned-article', App\Http\Controllers\PinnedArticleController::class);
